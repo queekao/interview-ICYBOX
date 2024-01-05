@@ -1,0 +1,18 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+.DS_Store
+.vscode
+front-end-test.md
+.env*
+# Build
+.vite-ssg-dist
+.vite-ssg-temp
+*.local
+dist
+dist-ssr
+# Test
+cypress/downloads
+# Dependency
+*.log
+node_modules
+pnpm-lock.yaml

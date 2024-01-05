@@ -1,0 +1,44 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == Phone {
+    @media only screen and (max-width: 37.5em) {
+      ///600px = 37.5em
+      @content;
+    }
+  }
+  @if $breakpoint == TabPort {
+    @media only screen and (max-width: 56.25em) {
+      // 900px = 56.25em
+      @content;
+    }
+  }
+  @if $breakpoint == TabLand {
+    @media only screen and (max-width: 75em) {
+      // 1200px = 75em
+      @content;
+    }
+  }
+  @if $breakpoint == BigDesktop {
+    @media only screen and (min-width: 112.5em) {
+      // 1800px = 112.5em
+      @content;
+    }
+  }
+}
+@mixin positionCenter($type: null) {
+  position: absolute;
+  @if ($type == "x") {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if($type == "y") {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h;
+}

@@ -1,0 +1,27 @@
+:root {
+  /* Color */
+  --color-grey-200: #d8d8d8;
+  --color-grey-100: #f7f7f7;
+  --color-grey-50: #e7e9eb;
+  --color-white: #ffffff;
+  --color-error: #ee4a44;
+
+  /* Gradient */
+  --color-gradient-bottom: linear-gradient(to bottom, #ffffff 0%, #efefef 100%);
+  --color-gradient-top: linear-gradient(to top, #ffffff 0%, #efefef 100%);
+
+  /* Font Size */
+  --fz-h1: 4rem;
+  --fz-h2: 2rem;
+  --fz-h3: 1.5rem;
+  --fz-p: 1rem;
+
+  /* Box Shadow */
+  --bs-style-normal: 0 0 10px rgba(0, 0, 0, 0.14);
+  --bs-style-inset: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+
+  /* Text Shadow */
+
+  // border-radius
+  --border-40: 5px;
+}
