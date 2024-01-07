@@ -93,6 +93,7 @@ Commit:
 - **perf**: A code change that improves performance
 - **refactor**: A code change that neither fixes a bug nor adds refactor the code
 - **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **test**: For both unit and e2e test
 
 ### Reference
 Repo: https://github.com/antfu/vitesse/
