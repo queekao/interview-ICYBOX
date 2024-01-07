@@ -24,13 +24,14 @@ const rules = reactive<FormRules<FormRule>>({
   ],
 })
 const updateInput = debounce((value: string) => {
+  defaultForm.input = value
   setInputValue(value) // form value should separate from input value
 }, 500)
-function submitForm() {
+function submitForm(e: MouseEvent) {
+  e.preventDefault()
   ruleFormRef?.value?.validate((valid: boolean) => {
     if (valid) {
-      // Handle valid form submission
-      alert('submit!')
+      // alert('submit!')
     }
     else {
       console.error('Validation failed.')
