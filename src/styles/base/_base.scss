@@ -34,5 +34,11 @@ body,
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 8px;
+}
+.toast{
+  font-size: var(--fz-h3);
+}
+.highlight {
+    background:#ffc600; // Global highlight
 }

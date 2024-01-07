@@ -24,7 +24,6 @@
         .el-select__wrapper,
         .el-textarea__inner {
           background: transparent;
-          border: 1px solid var(--color-error) !important;
 
         }
       }
@@ -32,8 +31,7 @@
       &.is-required {
         &:not(.is-no-asterisk).asterisk-left > .el-form-item__label::before {
           margin-right: 0;
-          font-size: var(--fz-h2);
-          color: var(--color-error);
+          display: none;
         }
       }
       // label(all)
@@ -57,23 +55,14 @@
         display: none;
       }
       &__wrapper {
-        background: transparent;
-        border-radius: 2rem;
-        border: 1px solid var(--color-neutral-300);
+        border-radius: 0px;
         &.is-focus {
-          border: 1px solid var(--color-primary-400);
+          box-shadow: none
         }
       }
 
       &__inner {
-        font-weight: 400;
-        font-size: var(--fz-h3);
-        color: var(--color-neutral-300);
-
-        &::placeholder {
-          font-size: var(--fz-h3);
-          color: var(--color-neutral-400);
-        }
+        text-align: center;
       }
     }
     .el-select {

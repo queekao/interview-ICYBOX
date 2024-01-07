@@ -21,7 +21,9 @@ Below is the directory structure for the frontend part of the project:
 │   ├── pages/                   # Page components and API routes
 │   ├── router/                  # For navigation guard or some middleware use case
 │   ├── stores/                  # Global state
-│   ├── styles/                  # Global style
+│   ├── styles/                  # Global style (You might wanna use scss not unoCss)
+│   │   └── libs/                # For UI or other library component override
+│   ├── types/                   # Store the types
 │   ├── auto-imports.d.ts        # The modules you wanna auto import it
 │   ├── shims.d.ts               # Helps understand how to handle non-TS modules
 │   ├── components.d.ts          # Auto-imports component

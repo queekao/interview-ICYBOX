@@ -9,6 +9,7 @@ export default defineComponent({
       default: 'icon',
     },
     name: {
+      // name of the icon
       type: String,
       required: true,
     },
