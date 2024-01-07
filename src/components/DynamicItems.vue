@@ -25,8 +25,8 @@ watchEffect(() => {
   if (searchInputValue.value)
     searchDatas(searchInputValue.value)
 })
-watch(() => matchArrSearch.value.length, (newLength) => {
-  if (newLength === 0)
+watch(() => searchInputValue.value, () => {
+  if (matchArrSearch.value.length === 0)
     toast.warn('No Result')
 })
 function highlightMatch(text: string) {

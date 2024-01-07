@@ -7,10 +7,6 @@ useHead({
     {
       name: 'description', content: 'Interview project',
     },
-    {
-      name: 'theme-color',
-      content: () => isDark.value ? '#00aba9' : '#ffffff', // Not using it currently
-    },
   ],
 })
 </script>
