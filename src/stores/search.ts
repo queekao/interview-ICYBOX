@@ -1,6 +1,6 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-interface DynamicItemProps {
+interface SearchItemProps {
   name?: string
   city?: string
   state?: string
@@ -13,19 +13,33 @@ export const useSearchStore = defineStore('search', () => {
   const inputValue = ref<string>('')
   const searchInputValue = computed(() => inputValue)
 
-  const allDatas = ref<DynamicItemProps[]>([])
-  const matchArr = ref<DynamicItemProps[]>([])
+  const allDatas = ref<SearchItemProps[]>([])
+  const matchArr = ref<SearchItemProps[]>([])
   const matchArrSearch = computed(() => matchArr)
+  const searchCache = new Map<string, SearchItemProps[]>()
 
-  const outputDefault = ref<DynamicItemProps[]>([{ name: 'Filter For A City' },
+  const outputDefault = ref<SearchItemProps[]>([{ name: 'Filter For A City' },
     { name: 'Or A State' }])
   function searchDatas(newValue: string) {
-    console.log(allDatas.value)
+    if (searchCache.has(newValue)) {
+      console.time('Cached Search Time')
 
-    matchArr.value = allDatas.value.filter((place: DynamicItemProps) => {
-      const regex = new RegExp(newValue, 'gi')
-      return place?.city?.match(regex) || place?.state?.match(regex)
-    })
+      // O(1) for the already search value we need cache it
+      matchArr.value = searchCache.get(newValue) as SearchItemProps[]
+      console.timeEnd('Cached Search Time')
+    }
+    else {
+    // O(n)
+      console.time('Search Time')
+
+      matchArr.value = allDatas.value.filter((place: SearchItemProps) => {
+        const regex = new RegExp(newValue, 'gi')
+        return place?.city?.match(regex) || place?.state?.match(regex)
+      })
+      console.timeEnd('Search Time')
+
+      searchCache.set(newValue, matchArr.value)
+    }
   }
   /**
    *

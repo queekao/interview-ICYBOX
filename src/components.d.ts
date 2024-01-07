@@ -7,9 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    CustomFormInput: typeof import('./components/form/CustomFormInput.vue')['default']
     CustomSvgIcon: typeof import('./components/CustomSvgIcon.vue')['default']
-    DynamicFormItem: typeof import('./components/form/CustomFormInput.vue')['default']
     DynamicItems: typeof import('./components/DynamicItems.vue')['default']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']

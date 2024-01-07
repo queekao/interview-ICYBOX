@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // https://github.com/vueuse/head
+
 useHead({
   title: 'interview-ICYBOX',
   meta: [
@@ -8,7 +9,7 @@ useHead({
     },
     {
       name: 'theme-color',
-      content: () => isDark.value ? '#00aba9' : '#ffffff',
+      content: () => isDark.value ? '#00aba9' : '#ffffff', // Not using it currently
     },
   ],
 })

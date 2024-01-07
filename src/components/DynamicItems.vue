@@ -20,8 +20,10 @@ fetch(`${import.meta.env.VITE_API_ENDPOINT}`, {
     toast.error('request error')
     throw new Error(err)
   })
+
 watchEffect(() => {
-  searchDatas(searchInputValue.value)
+  if (searchInputValue.value)
+    searchDatas(searchInputValue.value)
 })
 watch(() => matchArrSearch.value.length, (newLength) => {
   if (newLength === 0)
