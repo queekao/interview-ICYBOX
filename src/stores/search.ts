@@ -24,16 +24,17 @@ export const useSearchStore = defineStore('search', () => {
     if (searchCache.has(newValue)) {
       console.time('Cached Search Time')
 
-      // O(1) for the already search value we need cache it
+      // O(1)  we need to cache search result
       matchArr.value = searchCache.get(newValue) as SearchItemProps[]
       console.timeEnd('Cached Search Time')
     }
     else {
-    // O(n)
+    // O(p * (m + n)) p for place
       console.time('Search Time')
 
       matchArr.value = allDatas.value.filter((place: SearchItemProps) => {
         const regex = new RegExp(newValue, 'gi')
+        // if the pattern becomes more complex, the time complexity of the regex matching could increase
         return place?.city?.match(regex) || place?.state?.match(regex)
       })
       console.timeEnd('Search Time')
